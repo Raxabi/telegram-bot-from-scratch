@@ -1,16 +1,14 @@
 # TELEGRAM BOT USING THE API
 
 import requests as req
-from dotenv import load_dotenv, get_key
+from dotenv import load_dotenv
 from pprint import pprint
 import re
 import os
 
 config = load_dotenv(".env")
 
-teletoken = os.environ.get("telegram_token")
-
-chat_id = os.environ.get("chat_id")
+teletoken, chat_id = os.environ.get("telegram_token"), os.environ.get("chat_id")
 
 uri = f"https://api.telegram.org/bot{teletoken}/"
 
