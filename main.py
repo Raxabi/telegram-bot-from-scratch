@@ -1,7 +1,7 @@
 # TELEGRAM BOT USING THE API
 
 import requests as req
-from dotenv import load_dotenv
+from dotenv import load_dotenv, get_key
 from pprint import pprint
 import re
 import os
@@ -9,6 +9,8 @@ import os
 config = load_dotenv(".env")
 
 teletoken = os.environ.get("telegram_token")
+
+chat_id = os.environ.get("chat_id")
 
 uri = f"https://api.telegram.org/bot{teletoken}/"
 
@@ -48,4 +50,4 @@ def listen_bot_on_chat(chat_id: str or int):
 if __name__ == "__main__":
     print("Bot listening on chat")
     while True:
-        listen_bot_on_chat(-1001573105294)
+        listen_bot_on_chat(chat_id)
